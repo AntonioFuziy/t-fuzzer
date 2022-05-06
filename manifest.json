@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "t-fuzzer",
+  "version": "0.0.1",
+
+  "description": "Detect attacks and privacy violations in web applications.",
+
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "js": [ "/app.js" ]
+    }
+  ]
+}
