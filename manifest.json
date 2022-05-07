@@ -10,5 +10,14 @@
       "matches": [ "<all_urls>" ],
       "js": [ "/app.js" ]
     }
-  ]
+  ],
+
+  "permissions": [
+    "cookies"
+  ],
+
+  "browser_action": {
+    "default_title": "t-fuzzer",
+    "default_popup": "./pages/popup.html"
+  }
 }

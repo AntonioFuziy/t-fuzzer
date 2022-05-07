@@ -1,4 +1,30 @@
 body{
   padding: 1rem;
-  background-color: #f0f0f0;
+  background-color: #010101;
+}
+
+h1, p, label, a{
+  font-family: "Roboto", sans-serif;
+}
+
+h1{
+  color: #f0f0f0;
+}
+
+#cookies {
+  color: #f0f0f0;
+}
+
+#button {
+  background-color: #121212;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  color: #fff;
+  font-weight: bold;
+}
+
+#button:hover {
+  background-color: #101010;
+  cursor: pointer;
 }
