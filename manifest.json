@@ -1,23 +1,12 @@
 {
-  "manifest_version": 2,
-  "name": "t-fuzzer",
-  "version": "0.0.1",
-
-  "description": "Detect attacks and privacy violations in web applications.",
-
-  "content_scripts": [
-    {
-      "matches": [ "<all_urls>" ],
-      "js": [ "/app.js" ]
-    }
-  ],
-
-  "permissions": [
-    "cookies"
-  ],
-
   "browser_action": {
-    "default_title": "t-fuzzer",
-    "default_popup": "./pages/popup.html"
-  }
+    "browser_style": true,
+    "default_title": "List cookies in the active tab",
+    "default_popup": "popup.html"
+  },
+  "description": "List cookies in the active tab.",
+  "manifest_version": 2,
+  "name": "List cookies",
+  "version": "1.0",
+  "permissions": ["cookies","<all_urls>","tabs"]
 }

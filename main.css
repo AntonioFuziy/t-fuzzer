@@ -1,0 +1,30 @@
+html, body {
+  max-width: 720px;
+  background-color: #010101;
+  color: #f0f0f0;
+  padding: 10px;
+}
+
+.text-section-header {
+  color: #f0f0f0;
+  font-weight: bold;
+}
+
+.panel {
+  padding: 20px 10px;
+  background-color: #101010;
+}
+
+#number-cookies {
+  font-weight: bold;
+  color: #f0f0f0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 5px;
+  color: #f0f0f0;
+}
