@@ -7,13 +7,39 @@
 
   <body>
     <div class="panel">
-      <div class="panel-section panel-section-header">
-        <div class="text-section-header" id="header-title"></div>
-      </div>
-      <div id="number-cookies"></div>
-      <ul id="cookie-list">
-      </ul>
+      <details class="cookies-information">
+        <summary class="text-section-header">
+          Cookies information
+        </summary>
+        <div id="header-title-cookies" class="header-title"></div>
+        <h3 id="number-cookies"></h3>
+        <h2>All cookies:</h2>
+        <ul id="cookie-list">
+        </ul>
+      </details>
+
+      <details class="local-storage-information">
+        <summary class="text-section-header">
+          Local Storage information:
+        </summary>
+        <div id="header-title-local-storage" class="header-title"></div>
+        <h3 id="size-local-storage"></h3>
+        <h2>All data in local storage:</h2>
+        <ul id="local-storage-list"></ul>
+      </details>
+
+      <details class="session-storage-information">
+        <summary class="text-section-header">
+          Session Storage information:
+        </summary>
+        <div id="header-title-session-storage" class="header-title"></div>
+        <h3 id="size-session-storage"></h3>
+        <h2>All data in session storage:</h2>
+        <ul id="session-storage-list"></ul>
+      </details>
     </div>
-    <script src="app.js"></script>
+    <script src="src/cookies.js"></script>
+    <script src="src/localStorage.js"></script>
+    <script src="src/sessionStorage.js"></script>
   </body>
 </html>

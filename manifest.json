@@ -1,12 +1,20 @@
 {
   "browser_action": {
     "browser_style": true,
-    "default_title": "List cookies in the active tab",
+    "default_title": "Security Indicator for Firefox",
     "default_popup": "popup.html"
   },
-  "description": "List cookies in the active tab.",
+  "description": "Security Indicator for Firefox.",
   "manifest_version": 2,
-  "name": "List cookies",
+  "name": "t-fuzzer",
   "version": "1.0",
-  "permissions": ["cookies","<all_urls>","tabs"]
+
+  "permissions": ["cookies","<all_urls>","tabs", "storage"],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["src/app.js"]
+    }
+  ]
 }

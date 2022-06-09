@@ -1,13 +1,26 @@
 html, body {
-  max-width: 720px;
+  width: 720px;
   background-color: #010101;
   color: #f0f0f0;
   padding: 10px;
 }
 
+details{
+  margin-bottom: 30px;
+  padding: 10px 20px;
+}
+
 .text-section-header {
   color: #f0f0f0;
   font-weight: bold;
+  font-size: 24px;
+}
+
+.header-title{
+  margin-top: 10px;
+  color: #f0f0f0;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .panel {
@@ -25,6 +38,7 @@ ul {
 }
 
 li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   color: #f0f0f0;
+  font-weight: normal;
 }
