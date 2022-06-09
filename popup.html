@@ -7,12 +7,17 @@
 
   <body>
     <div class="panel">
+      <h1 id="website-security-status">Website Is Secure</h1>
       <details class="cookies-information">
         <summary class="text-section-header">
           Cookies information
         </summary>
         <div id="header-title-cookies" class="header-title"></div>
         <h3 id="number-cookies"></h3>
+        <div class="cookies-security">
+          <h3>Nível de segurança dos cookies:</h3>
+          <progress value="10" max="100" id="cookies-status"></progress>  
+        </div>
         <h2>All cookies:</h2>
         <ul id="cookie-list">
         </ul>
@@ -24,6 +29,10 @@
         </summary>
         <div id="header-title-local-storage" class="header-title"></div>
         <h3 id="size-local-storage"></h3>
+        <div class="local-storage-security">
+          <h3>Nível de segurança do local storage:</h3>
+          <progress value="0" max="100" id="local-storage-status"></progress>  
+        </div>
         <h2>All data in local storage:</h2>
         <ul id="local-storage-list"></ul>
       </details>
@@ -34,12 +43,40 @@
         </summary>
         <div id="header-title-session-storage" class="header-title"></div>
         <h3 id="size-session-storage"></h3>
+        <div class="session-storage-security">
+          <h3>Nível de segurança do session storage:</h3>
+          <progress value="0" max="100" id="session-storage-status"></progress>  
+        </div>
         <h2>All data in session storage:</h2>
         <ul id="session-storage-list"></ul>
+      </details>
+
+      <details class="fingerprint-information">
+        <summary class="text-section-header">
+          Is anyone fingerprinting you?
+        </summary>
+        <h3 id="fingerprint-exists"></h3>
+        <div class="fingerprint-security">
+          <h3>Nível de segurança do fingerprint:</h3>
+          <progress value="0" max="100" id="fingerprint-status"></progress>  
+        </div>
+        <span id="fingerprint-id"></span>
+      </details>
+      
+      <details class="third-party-information">
+        <summary class="text-section-header">
+          Third Party Domains:
+        </summary>
+        <h3 id="size-third-party"></h3>
+        <h2>All third party domains:</h2>
+        <ul id="third-party-list"></ul>
       </details>
     </div>
     <script src="src/cookies.js"></script>
     <script src="src/localStorage.js"></script>
     <script src="src/sessionStorage.js"></script>
+    <script src="src/thirdPartyDomains.js"></script>
+    <script src="src/fingerprint.js"></script>
+    <script src="src/adBlocker.js"></script>
   </body>
 </html>

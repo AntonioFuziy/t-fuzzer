@@ -1,9 +1,7 @@
-function showCookiesForTab(tabs) {
+const showCookiesForTab = (tabs) => {
   let tab = tabs.pop();
   let countCookies = 0;
   var gettingAllCookies = browser.cookies.getAll({url: tab.url});
-  console.log("Local Storage")
-  console.log("Local Storage: ", localStorage)
 
   gettingAllCookies.then((cookies) => {
     var activeTabUrl = document.getElementById('header-title-cookies');
@@ -31,6 +29,18 @@ function showCookiesForTab(tabs) {
 
       p.appendChild(content);
       parent.appendChild(p);
+    }
+
+    var websiteSecurity = document.getElementById('website-security-status');
+    var cookiesSecurity = document.getElementById('cookies-status');
+    
+    if(countCookies > 10){
+      websiteSecurity.innerHTML = "Website is Insecure";
+      websiteSecurity.style.color = "red";
+      cookiesSecurity.style.color = "red";
+      cookiesSecurity.setAttribute("value", "10");
+    } else {
+      cookiesSecurity.setAttribute("value", "100");
     }
   });
 }

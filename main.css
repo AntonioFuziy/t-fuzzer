@@ -5,6 +5,10 @@ html, body {
   padding: 10px;
 }
 
+#website-security-status{
+  text-align: center;
+}
+
 details{
   margin-bottom: 30px;
   padding: 10px 20px;
@@ -41,4 +45,19 @@ li {
   margin-bottom: 10px;
   color: #f0f0f0;
   font-weight: normal;
+}
+
+.cookies-security, 
+.local-storage-security, 
+.session-storage-security, 
+.fingerprint-security, 
+.third-party-security {
+  margin: 30px 0;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+  border-radius: 4px;
+  border-style: none;
 }
