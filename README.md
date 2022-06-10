@@ -1,6 +1,6 @@
 # t-fuzzer
 
-![t-fuzzer-logo](https://github.com/AntonioFuziy/t-fuzzer/icons/tf-logos_transparent.png?raw=true)
+![t-fuzzer-logo](https://github.com/AntonioFuziy/t-fuzzer/blob/main/icons/tf-logos_transparent.png?raw=true)
 
 A firefox extension built to detect attacks and privacy violations on any website
 
