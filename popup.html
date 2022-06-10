@@ -7,16 +7,20 @@
 
   <body>
     <div class="panel">
-      <h1 id="website-security-status">Website Is Secure</h1>
+      <div class="header-panel">
+        <h1 id="website-security-status">Website Is Secure</h1>
+        <h2 id="website-score"></h2>
+        <progress id="score-progress-bar" value="0" max="400"></progress>
+      </div>
       <details class="cookies-information">
-        <summary class="text-section-header">
+        <summary class="text-section-header" id="cookies-security-status">
           Cookies information
         </summary>
         <div id="header-title-cookies" class="header-title"></div>
         <h3 id="number-cookies"></h3>
         <div class="cookies-security">
-          <h3>Nível de segurança dos cookies:</h3>
-          <progress value="10" max="100" id="cookies-status"></progress>  
+          <h3>Risk score of cookies:</h3>
+          <progress value="0" max="100" id="cookies-status"></progress>  
         </div>
         <h2>All cookies:</h2>
         <ul id="cookie-list">
@@ -24,40 +28,40 @@
       </details>
 
       <details class="local-storage-information">
-        <summary class="text-section-header">
+        <summary class="text-section-header" id="local-storage-security-status">
           Local Storage information:
         </summary>
         <div id="header-title-local-storage" class="header-title"></div>
         <h3 id="size-local-storage"></h3>
         <div class="local-storage-security">
-          <h3>Nível de segurança do local storage:</h3>
-          <progress value="0" max="100" id="local-storage-status"></progress>  
+          <h3>Risk score of local storage:</h3>
+          <progress value="0" max="50" id="local-storage-status"></progress>  
         </div>
         <h2>All data in local storage:</h2>
         <ul id="local-storage-list"></ul>
       </details>
 
       <details class="session-storage-information">
-        <summary class="text-section-header">
+        <summary class="text-section-header" id="session-storage-security-status">
           Session Storage information:
         </summary>
         <div id="header-title-session-storage" class="header-title"></div>
         <h3 id="size-session-storage"></h3>
         <div class="session-storage-security">
-          <h3>Nível de segurança do session storage:</h3>
-          <progress value="0" max="100" id="session-storage-status"></progress>  
+          <h3>Risk score of session storage:</h3>
+          <progress value="0" max="20" id="session-storage-status"></progress>  
         </div>
         <h2>All data in session storage:</h2>
         <ul id="session-storage-list"></ul>
       </details>
 
       <details class="fingerprint-information">
-        <summary class="text-section-header">
+        <summary class="text-section-header" id="fingertprint-security-status">
           Is anyone fingerprinting you?
         </summary>
         <h3 id="fingerprint-exists"></h3>
         <div class="fingerprint-security">
-          <h3>Nível de segurança do fingerprint:</h3>
+          <h3>Risk score of fingerprint:</h3>
           <progress value="0" max="100" id="fingerprint-status"></progress>  
         </div>
         <span id="fingerprint-id"></span>
@@ -77,6 +81,6 @@
     <script src="src/sessionStorage.js"></script>
     <script src="src/thirdPartyDomains.js"></script>
     <script src="src/fingerprint.js"></script>
-    <script src="src/adBlocker.js"></script>
+    <script src="src/securityScore.js"></script>
   </body>
 </html>

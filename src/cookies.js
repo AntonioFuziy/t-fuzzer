@@ -1,7 +1,9 @@
 const showCookiesForTab = (tabs) => {
   let tab = tabs.pop();
   let countCookies = 0;
-  var gettingAllCookies = browser.cookies.getAll({url: tab.url});
+  var gettingAllCookies = browser.cookies.getAll({
+    url: tab.url
+  });
 
   gettingAllCookies.then((cookies) => {
     var activeTabUrl = document.getElementById('header-title-cookies');
@@ -31,16 +33,17 @@ const showCookiesForTab = (tabs) => {
       parent.appendChild(p);
     }
 
-    var websiteSecurity = document.getElementById('website-security-status');
+    var websiteSecurity = document.getElementById('cookies-security-status');
     var cookiesSecurity = document.getElementById('cookies-status');
     
-    if(countCookies > 10){
-      websiteSecurity.innerHTML = "Website is Insecure";
-      websiteSecurity.style.color = "red";
-      cookiesSecurity.style.color = "red";
-      cookiesSecurity.setAttribute("value", "10");
-    } else {
+    if(countCookies >= 200){
+      websiteSecurity.style.color = "#F4364C";
       cookiesSecurity.setAttribute("value", "100");
+    } else if(countCookies > 100 && countCookies < 200){
+      websiteSecurity.style.color = "#FDB44E";
+      cookiesSecurity.setAttribute("value", countCookies.toString());
+    } else {
+      cookiesSecurity.setAttribute("value", countCookies.toString());
     }
   });
 }

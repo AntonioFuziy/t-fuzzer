@@ -4,9 +4,11 @@ const showAllSessionStorage = async (tabs) => {
   var sizeHTML = document.getElementById('size-session-storage');
   let sessionStorageLength = 0;
 
-  const response = await browser.tabs.sendMessage(tab.id, { method: "sessionStorageData" })
+  const response = await browser.tabs.sendMessage(tab.id, { 
+    method: "sessionStorageData" 
+  });
 
-  var websiteSecurity = document.getElementById('website-security-status');
+  var websiteSecurity = document.getElementById('session-storage-security-status');
   var sessionStorageSecurity = document.getElementById('session-storage-status');
 
   if (response.data.length > 0) {
@@ -22,13 +24,14 @@ const showAllSessionStorage = async (tabs) => {
     let sizeContent = document.createTextNode("Number of items on Session Storage: " + sessionStorageLength);
     sizeHTML.appendChild(sizeContent);
 
-    if(localStorageLength > 10){
-      websiteSecurity.innerHTML = "Website is Insecure";
-      websiteSecurity.style.color = "red";
-      sessionStorageSecurity.style.color = "red";
-      sessionStorageSecurity.setAttribute("value", "10");
+    if(sessionStorageLength > 20){
+      websiteSecurity.style.color = "#F4364C";
+      sessionStorageSecurity.setAttribute("value", "20");
+    } else if (sessionStorageLength > 10 && sessionStorageLength < 20){
+      websiteSecurity.style.color = "#FDB44E";
+      sessionStorageSecurity.setAttribute("value", sessionStorageLength.toString());
     } else {
-      sessionStorageSecurity.setAttribute("value", "100");
+      sessionStorageSecurity.setAttribute("value", sessionStorageLength.toString());
     }
   } else {
     let noSessionStorageTag = document.createElement("h4");
@@ -36,7 +39,6 @@ const showAllSessionStorage = async (tabs) => {
 
     noSessionStorageTag.appendChild(noSessionStorageData);
     listHTML.appendChild(noSessionStorageTag);
-    sessionStorageSecurity.setAttribute("value", "100");
   }
 }
   

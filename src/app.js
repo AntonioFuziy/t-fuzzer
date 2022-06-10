@@ -23,13 +23,13 @@ const getFingerprint = () => {
   fpPromise
     .then(fp => fp.get())
     .then(result => {
-      const visitorId = result.visitorId
-      let visitorIdElement = document.getElementById('teste')
-      visitorIdElement.innerHTML = visitorId
+      const visitorId = result.visitorId;
+      let visitorIdElement = document.getElementById('teste');
+      visitorIdElement.innerHTML = visitorId;
       if(visitorId){
-        return visitorId
+        return visitorId;
       } else {
-        return null
+        return null;
       }
     }
   )

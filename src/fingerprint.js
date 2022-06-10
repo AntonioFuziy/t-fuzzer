@@ -8,7 +8,7 @@ const getFingerprint = async (tabs) => {
     method: "fingerprintData"
   });
 
-  var websiteSecurity = document.getElementById('website-security-status');
+  var websiteSecurity = document.getElementById('fingertprint-security-status');
   var fingerprintSecurity = document.getElementById('fingerprint-status');
 
   var fingerprintData = response.data;
@@ -16,18 +16,12 @@ const getFingerprint = async (tabs) => {
   if (fingerprintData) {
     fingerprintExists.innerHTML = "You are being fingerprinted";
     fingerprintId.innerHTML = "The fingerprinter is "+ fingerprintData;
+    websiteSecurity.style.color = "#F4364C";
+    fingerprintSecurity.setAttribute("value", "100");
   } else{
-    fingerprintExists.innerHTML = "No one is fingerprint you";
+    fingerprintExists.innerHTML = "No one is fingerprinting you";
     fingerprintId.innerHTML = "";
-  }
-
-  if(fingerprintData){
-    websiteSecurity.innerHTML = "Website is Insecure";
-    websiteSecurity.style.color = "red";
-    fingerprintSecurity.style.color = "red";
     fingerprintSecurity.setAttribute("value", "0");
-  } else {
-    fingerprintSecurity.setAttribute("value", "99");
   }
 }
 

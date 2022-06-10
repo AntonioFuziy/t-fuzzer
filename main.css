@@ -1,17 +1,27 @@
 html, body {
   width: 720px;
+  max-width: 720px;
   background-color: #010101;
   color: #f0f0f0;
-  padding: 10px;
 }
 
-#website-security-status{
-  text-align: center;
+.header-panel{
+  background-color: #212121;
+  color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
 }
 
 details{
   margin-bottom: 30px;
   padding: 10px 20px;
+}
+
+summary:hover{
+  max-width: 720px;
+  color: #61dafb;
+  cursor: pointer;
 }
 
 .text-section-header {
@@ -38,13 +48,14 @@ details{
 }
 
 ul {
-  list-style: none;
+  list-style: decimal;
 }
 
 li {
   margin-bottom: 10px;
   color: #f0f0f0;
-  font-weight: normal;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .cookies-security, 
@@ -56,7 +67,7 @@ li {
 }
 
 progress {
-  width: 100%;
+  width: 80%;
   height: 20px;
   border-radius: 4px;
   border-style: none;

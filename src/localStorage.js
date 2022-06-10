@@ -4,9 +4,11 @@ const showAllLocalStorage = async (tabs) => {
   var sizeHTML = document.getElementById('size-local-storage');
   let localStorageLength = 0;
 
-  const response = await browser.tabs.sendMessage(tab.id, { method: "localStorageData" })
+  const response = await browser.tabs.sendMessage(tab.id, { 
+    method: "localStorageData"
+  });
 
-  var websiteSecurity = document.getElementById('website-security-status');
+  var websiteSecurity = document.getElementById('local-storage-security-status');
   var localStorageSecurity = document.getElementById('local-storage-status');
 
   if (response.data.length > 0) {
@@ -22,13 +24,14 @@ const showAllLocalStorage = async (tabs) => {
     let sizeContent = document.createTextNode("Number of items on Local Storage: " + localStorageLength);
     sizeHTML.appendChild(sizeContent);
     
-    if(localStorageLength > 10){
-      websiteSecurity.innerHTML = "Website is Insecure";
-      websiteSecurity.style.color = "red";
-      localStorageSecurity.style.color = "red";
-      localStorageSecurity.setAttribute("value", "10");
+    if(localStorageLength > 50){
+      websiteSecurity.style.color = "#F4364C";
+      localStorageSecurity.setAttribute("value", "50");
+    } else if (localStorageLength > 25 && localStorageLength < 50){
+      localStorageSecurity.setAttribute("value", localStorageLength.toString());
+      websiteSecurity.style.color = "#FDB44E";
     } else {
-      localStorageSecurity.setAttribute("value", "100");
+      localStorageSecurity.setAttribute("value", localStorageLength.toString());
     }
 
   } else {
@@ -37,7 +40,6 @@ const showAllLocalStorage = async (tabs) => {
 
     noLocalStorageTag.appendChild(noLocalStorageData);
     listHTML.appendChild(noLocalStorageTag);
-    localStorageSecurity.setAttribute("value", "100");
   }
 }
   
