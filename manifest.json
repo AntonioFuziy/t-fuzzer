@@ -9,6 +9,12 @@
   "name": "t-fuzzer",
   "version": "1.0",
 
+  "icons": {
+    "16": "icons/tf-logos_transparent.png",
+    "32": "icons/tf-logos_transparent.png",
+    "64": "icons/tf-logos_transparent.png"
+  },
+
   "permissions": ["cookies","<all_urls>","tabs", "storage"],
 
   "content_scripts": [
