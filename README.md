@@ -4,7 +4,7 @@
 
 A firefox extension built to detect attacks and privacy violations on any website
 
-Made by: Antonio Fuziy and André Tavernaro
+**Made by: Antonio Fuziy and André Tavernaro**
 
 This extension uses some information about your browser, such as Cookies, Local Storage, Session Storage, Fingerprint and Third Party Domains.
 
