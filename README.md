@@ -3,6 +3,7 @@
 <img src="https://github.com/AntonioFuziy/t-fuzzer/blob/main/icons/tf-logos_transparent.png?raw=true" width="256" height="256" style="text-align: center;"/>
 
 A firefox extension built to detect attacks and privacy violations on any website
+Made by: Antonio Fuziy and André Tavernaro
 
 This extension uses some information about your browser, such as Cookies, Local Storage, Session Storage, Fingerprint and Third Party Domains.
 
