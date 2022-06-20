@@ -4,6 +4,7 @@
     "default_title": "Security Indicator for Firefox",
     "default_popup": "popup.html"
   },
+
   "description": "Security Indicator for Firefox.",
   "manifest_version": 2,
   "name": "t-fuzzer",
@@ -15,12 +16,12 @@
     "64": "icons/tf-logos_transparent.png"
   },
 
-  "permissions": ["cookies","<all_urls>","tabs", "storage"],
+  "permissions": ["cookies","<all_urls>","tabs", "storage", "http://*/*", "https://*/*"],
 
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["src/app.js"]
+      "js": ["app.js"]
     }
   ]
 }
